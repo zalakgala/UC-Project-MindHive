@@ -337,6 +337,10 @@ def activity_calendar(request):
     return JsonResponse(list(data), safe=False)
 
 
+import os
+import requests
+from django.http import StreamingHttpResponse
+
 @api_view(["GET"])
 @permission_classes([permissions.IsAuthenticated])
 def download_resource(request, pk):
@@ -348,10 +352,29 @@ def download_resource(request, pk):
     if not resource.file:
         return JsonResponse({"error": "No file available"}, status=400)
 
-    file_path = resource.file.path
     file_name = resource.file.name.split("/")[-1]
 
-    response = FileResponse(open(file_path, "rb"), as_attachment=True)
-    response["Content-Disposition"] = f'attachment; filename="{file_name}"'
+    # Local file fallback (when running locally with DEBUG=True)
+    if hasattr(resource.file, 'path') and os.path.exists(resource.file.path):
+        response = FileResponse(open(resource.file.path, "rb"), as_attachment=True)
+        response["Content-Disposition"] = f'attachment; filename="{file_name}"'
+        return response
 
-    return response
+    # Remote file fetching (for Cloudinary/S3 in production)
+    try:
+        file_url = resource.file.url
+        # Convert internal media URLs to absolute URLs if needed, but Cloudinary URLs are absolute
+        if not file_url.startswith("http"):
+            file_url = request.build_absolute_uri(file_url)
+            
+        r = requests.get(file_url, stream=True)
+        r.raise_for_status()
+
+        response = StreamingHttpResponse(
+            r.iter_content(chunk_size=8192), 
+            content_type=r.headers.get('Content-Type', 'application/octet-stream')
+        )
+        response["Content-Disposition"] = f'attachment; filename="{file_name}"'
+        return response
+    except Exception as e:
+        return JsonResponse({"error": f"File could not be retrieved: {str(e)}"}, status=404)
