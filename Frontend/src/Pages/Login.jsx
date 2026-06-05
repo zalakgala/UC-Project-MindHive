@@ -307,9 +307,9 @@ const Login = () => {
           <motion.div
             custom="left" // Now the card comes from the left
             variants={swapVariants}
-            className="flex-1 flex items-center justify-center p-16 z-20"
+            className="flex-1 flex items-center justify-center p-4 md:p-16 z-20"
           >
-            <div className="flex-1 flex items-center justify-center p-16 z-20 ">
+            <div className="flex-1 flex items-center justify-center p-4 md:p-16 z-20 ">
               <main className="w-full max-w-lg">
                 <div
                   className={`transition-all duration-700 ${

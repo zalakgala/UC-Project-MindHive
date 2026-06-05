@@ -117,8 +117,8 @@ const Focus = () => {
     };
 
     return (
-        <div className="ml-64 min-h-screen bg-[#F7EACD] p-6 font-inter text-[#3B2A1F]">
-            <div className="w-full bg-[#FFE455] rounded-[3rem] p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)] shadow-sm">
+        <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-6 font-inter text-[#3B2A1F]">
+            <div className="w-full bg-[#FFE455] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)] mt-16 md:mt-0 shadow-sm">
                 <header className="mb-10">
                     <h2 className="text-4xl font-black mb-2 text-[#3B2A1F]">Focus Mode</h2>
                     <p className="text-[#3B2A1F]/70 font-medium">Eliminate distractions and track your study sessions.</p>

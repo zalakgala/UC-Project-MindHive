@@ -247,7 +247,7 @@ const Viewer = () => {
       </header>
       
       <div className="flex-1 flex overflow-hidden relative">
-        <main className={`flex-1 relative overflow-hidden bg-white/50 flex flex-col transition-all duration-300 ${showNotes ? 'mr-[24rem]' : ''}`}>
+        <main className={`flex-1 relative overflow-hidden bg-white/50 flex flex-col transition-all duration-300 ${showNotes ? 'mr-0 md:mr-[24rem]' : ''}`}>
         {loading ? (
           <div className="w-full h-full flex flex-col items-center justify-center bg-white/50 gap-4">
             <FiLoader size={48} className="animate-spin text-[#3B2A1F]/40" />
@@ -439,7 +439,7 @@ const Viewer = () => {
         </main>
         
         {/* Notes Side Panel */}
-        <aside className={`absolute top-0 right-0 h-full w-[24rem] bg-[#F7EACD] border-l-4 border-white/50 flex flex-col shadow-2xl transition-transform duration-300 z-40 ${showNotes ? 'translate-x-0' : 'translate-x-full'}`}>
+        <aside className={`absolute top-0 right-0 h-full w-full md:w-[24rem] bg-[#F7EACD] border-l-4 border-white/50 flex flex-col shadow-2xl transition-transform duration-300 z-40 ${showNotes ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="p-6 border-b-2 border-white/40 flex justify-between items-center bg-[#FFE455]">
             <h2 className="font-black text-xl text-[#3B2A1F] flex items-center gap-2"><FiEdit3 /> Document Notes</h2>
             <button onClick={() => setShowNotes(false)} className="p-2 bg-white/40 hover:bg-white rounded-full transition text-[#3B2A1F] shadow-sm"><FiX size={20} /></button>

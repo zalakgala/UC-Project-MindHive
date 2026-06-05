@@ -187,28 +187,28 @@ const Saved = () => {
   );
 
   return (
-    <div className="ml-64 min-h-screen bg-[#F7EACD] p-6 font-inter text-[#3B2A1F]">
-      <div className="w-full bg-[#FFE455] rounded-[3rem] p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)] shadow-sm">
+    <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-6 font-inter text-[#3B2A1F]">
+      <div className="w-full bg-[#FFE455] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)] mt-16 md:mt-0 shadow-sm">
         {/* Header Bar */}
-        <header className="py-2 px-4 bg-[#ffda20]/70 fixed top-12 z-20 flex items-center justify-between mb-10 w-[70.5rem] rounded-full">
-          <div className="relative">
-            <FiSearch className="relative top-6 left-4 z-20 opacity-40" />
+        <header className="mb-10 flex items-center justify-between">
+          <div className="relative w-full">
+            <FiSearch className="absolute top-3.5 left-4 z-20 opacity-40" />
             <input
               type="text"
               placeholder="Search tags, resources or notes..."
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-white rounded-full py-3 px-12 outline-none shadow-inner text-sm placeholder:text-[#3B2A1F]/70 border border-transparent focus:border-[#3B2A1F]/10 transition relative bottom-2 w-[68.5rem]"
+              className="bg-white rounded-full py-3 pl-12 pr-4 outline-none shadow-inner text-sm placeholder:text-[#3B2A1F]/70 border border-transparent focus:border-[#3B2A1F]/10 transition relative w-full md:w-96 lg:w-2xl"
             />
           </div>
         </header>
 
         {/* Action Row */}
-        <div className="flex items-center justify-between mt-24 mb-10">
-          <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10 gap-4">
+          <div className="flex flex-col md:flex-row gap-4 w-full md:w-auto">
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-8 bg-white/90 px-5 py-2 rounded-2xl font-black text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
+                className="flex items-center justify-between w-full md:w-auto gap-4 md:gap-8 bg-white/90 px-5 py-2 rounded-2xl font-black text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
               >
                 Type: {selectedType}
                 <FiChevronDown
@@ -234,10 +234,10 @@ const Saved = () => {
               )}
             </div>
 
-            <div className="relative">
+            <div className="relative w-full md:w-auto">
               <button
                 onClick={() => { setIsTagDropdownOpen(!isTagDropdownOpen); setIsDropdownOpen(false); }}
-                className="flex items-center gap-8 bg-white/90 px-5 py-2 rounded-2xl font-black text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+                className="flex items-center justify-between w-full md:w-auto gap-4 md:gap-8 bg-white/90 px-5 py-2 rounded-2xl font-black text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
                 Tag: {selectedTag} <FiChevronDown className={`transition-transform ${isTagDropdownOpen ? "rotate-180" : ""}`} />
               </button>
 

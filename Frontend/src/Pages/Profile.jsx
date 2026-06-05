@@ -91,8 +91,8 @@ const Profile = () => {
   };
 
   return (
-    <div className="ml-64 min-h-screen bg-[#F7EACD] p-10 font-inter text-[#3B2A1F] flex justify-center">
-      <div className="w-full max-w-3xl mt-4">
+    <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-10 font-inter text-[#3B2A1F] flex justify-center">
+      <div className="w-full max-w-4xl bg-white rounded-[2rem] shadow-xl p-6 md:p-10 border border-[#3B2A1F]/10 relative mt-16 md:mt-0">
         <header className="mb-10 flex justify-center text-center">
           <div>
             <h2 className="text-4xl font-black mb-2">Account Settings</h2>

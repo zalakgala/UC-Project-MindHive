@@ -214,14 +214,14 @@ const HeroSection = () => {
         <img
           src={Hive}
           alt="Honeycomb background"
-          className="absolute right-0 top-10 w-[380px] z-0 opacity-40 pointer-events-none object-contain object-right-top"
+          className="absolute right-0 top-10 w-64 md:w-[380px] z-0 opacity-40 pointer-events-none object-contain object-right-top"
         />
 
         <FloatingBee duration={2.5} yDistance={15}>
           <img
             src={HoneyBee}
             alt="Realistic Bee"
-            className="relative left-[37rem] bottom-60 drop-shadow-xl w-56 -mt-8"
+            className="absolute right-10 bottom-20 md:relative md:left-[37rem] md:bottom-60 drop-shadow-xl w-32 md:w-56 md:-mt-8"
           />
         </FloatingBee>
 
@@ -229,22 +229,22 @@ const HeroSection = () => {
         <img
           src={HoneyBee2}
           alt="Cartoon Bee"
-          className="absolute left-0 bottom-0 z-20 w-[260px] object-contain object-left-bottom"
+          className="absolute left-0 bottom-0 z-20 w-40 md:w-[260px] object-contain object-left-bottom"
         />
 
         {/* Text container z-index elevated */}
-        <div className="text-center z-30 relative flex flex-col items-center">
-          <h1 className="maples text-[#3B2A1F] text-8xl font-bold tracking-widest mb-6 drop-shadow-md">
+        <div className="text-center z-30 relative flex flex-col items-center mt-20 md:mt-0">
+          <h1 className="maples text-[#3B2A1F] text-6xl md:text-8xl font-bold tracking-widest mb-4 md:mb-6 drop-shadow-md">
             MINDHIVE
           </h1>
 
-          <div className="text-9xl text-[#3B2A1F] mb-10 flex flex-col items-center gap-2 mel">
+          <div className="text-5xl md:text-9xl text-[#3B2A1F] mb-6 md:mb-10 flex flex-col items-center gap-2 mel">
             <span className="inline-block ">Your knowledge</span>
             <span className="inline-block ">organized.</span>
           </div>
 
-          <p className="text-2xl text-[#3B2A1F] font-semibold max-w-2xl text-center leading-relaxed mt-4 pop">
-            Your second brain for notes, resources, and ideas. <br />
+          <p className="text-lg md:text-2xl text-[#3B2A1F] font-semibold max-w-2xl text-center leading-relaxed mt-2 md:mt-4 pop px-4">
+            Your second brain for notes, resources, and ideas. <br className="hidden md:block" />
             Designed to help you think clearly.
           </p>
         </div>
@@ -262,30 +262,30 @@ const ClutterSection = () => {
       id="clutter"
       className="min-h-screen flex items-center justify-center py-20 relative overflow-hidden"
     >
-      <div className="flex w-full max-w-7xl mx-auto items-center justify-between z-10">
+      <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto items-center justify-between z-10 gap-10 md:gap-0">
         {/* Left Side Images */}
-        <div className="flex w-1/2 justify-center pt-20 ml-10 relative">
-          <img src={Files} className="w-[700px] " alt="Messy files" />
+        <div className="flex w-full md:w-1/2 justify-center pt-10 md:pt-20 ml-0 md:ml-10 relative px-4">
+          <img src={Files} className="w-full md:w-[700px] " alt="Messy files" />
           <FloatingBee duration={2.5} yDistance={15}>
             <img
               src={HoneyBee}
               alt="Realistic Bee"
-              className="relative left-60 bottom-10 drop-shadow-xl w-56 -mt-8"
+              className="hidden md:block absolute right-0 bottom-10 drop-shadow-xl w-56"
             />
           </FloatingBee>
         </div>
 
         {/* Right Side Text Container */}
-        <div className="flex w-1/2 flex-col relative px-4 bottom-16 items-center z-30">
-          <h2 className="text-8xl text-[#3B2A1F] font-normal tracking-wide leading-[1.1] mb-8 text-center mel">
+        <div className="flex w-full md:w-1/2 flex-col relative px-4 bottom-0 md:bottom-16 items-center z-30">
+          <h2 className="text-5xl md:text-8xl text-[#3B2A1F] font-normal tracking-wide leading-[1.1] mb-6 md:mb-8 text-center mel">
             Clutter Kills <br /> Focus
           </h2>
-          <p className="text-2xl text-[#3B2A1F] font-semibold mb-8 max-w-content text-center pop leading-relaxed">
-            Scattered notes, Endless Tabs Open <br />
-            Files lost in folder. Important ideas disappear <br />
+          <p className="text-lg md:text-2xl text-[#3B2A1F] font-semibold mb-6 md:mb-8 max-w-content text-center pop leading-relaxed px-4">
+            Scattered notes, Endless Tabs Open <br className="hidden md:block" />
+            Files lost in folder. Important ideas disappear <br className="hidden md:block" />
             when you need them.
           </p>
-          <h3 className="text-6xl text-[#EAB308] drop-shadow-sm text-center maples">
+          <h3 className="text-4xl md:text-6xl text-[#EAB308] drop-shadow-sm text-center maples">
             There's a better way!
           </h3>
         </div>
@@ -295,7 +295,7 @@ const ClutterSection = () => {
       <img
         src={HoneyBee3}
         alt="Cartoon Bee"
-        className="absolute right-0 bottom-0 z-20 w-[260px] object-contain object-right-bottom drop-shadow-md block"
+        className="absolute right-0 bottom-0 z-20 w-40 md:w-[260px] object-contain object-right-bottom drop-shadow-md block"
       />
     </div>
   );
@@ -735,8 +735,8 @@ const FeaturesGrid = () => {
       />
 
       {/* Header Container - Z-index elevated to z-30 */}
-      <header className="text-center mb-16 z-30 relative pointer-events-none">
-        <h1 className="text-[7rem] font-bold tracking-tight mb-4 mel">
+      <header className="text-center mb-10 md:mb-16 z-30 relative pointer-events-none mt-10 md:mt-0">
+        <h1 className="text-5xl md:text-[7rem] font-bold tracking-tight mb-4 mel px-2">
           Turn chaos into clarity
         </h1>
         <p className="text-xl md:text-2xl leading-relaxed pop">
@@ -792,7 +792,7 @@ const FeaturesGrid = () => {
 const Aboutus = () => {
   return (
     <div id="about" className="min-h-screen font-sans">
-      <section className="bg-[#F7EACD] py-16 px-20 flex items-center justify-center gap-48 relative overflow-hidden">
+      <section className="bg-[#F7EACD] py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-48 relative overflow-hidden">
         <div className="flex flex-col items-center">
           <div className="relative">
             <img

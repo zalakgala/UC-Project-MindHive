@@ -90,10 +90,10 @@ const HomePage = () => {
     .slice(0, 6);
 
   return (
-    <div className="ml-64 min-h-screen bg-[#F7EACD] p-6 font-inter text-[#3B2A1F]">
-      <div className="w-full h-full bg-[#FFE455] rounded-[3rem] p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)]">
+    <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-6 font-inter text-[#3B2A1F]">
+      <div className="w-full h-full bg-[#FFE455] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)]">
         {/* Top Header Bar */}
-        <header className="py-2 px-4 bg-[#ffda20]/70 fixed top-12 z-20 flex items-center justify-between mb-10 w-[70.5rem] rounded-full">
+        <header className="py-2 px-4 bg-[#ffda20]/70 fixed top-20 md:top-12 z-20 flex items-center justify-between mb-10 w-[calc(100%-3rem)] md:w-[calc(100%-21rem)] lg:w-[calc(100%-24rem)] max-w-6xl rounded-full">
           <div className="relative">
             <FiSearch className="relative top-6 left-4 z-20 opacity-40" />
             <input
@@ -101,23 +101,23 @@ const HomePage = () => {
               placeholder="Search tags, resources or notes..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-white rounded-full py-3 px-12 outline-none shadow-inner text-sm placeholder:text-[#3B2A1F]/70 border border-transparent focus:border-[#3B2A1F]/10 transition relative bottom-2 w-2xl"
+              className="bg-white rounded-full py-3 px-10 md:px-12 outline-none shadow-inner text-sm placeholder:text-[#3B2A1F]/70 border border-transparent focus:border-[#3B2A1F]/10 transition relative bottom-2 w-full md:w-96 lg:w-2xl"
             />
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2 md:gap-6">
             <button 
               onClick={() => setShowQuickAdd(true)}
-              className="bg-white px-6 py-3 rounded-full font-black text-sm flex items-center gap-2 shadow-lg hover:-translate-y-1 active:scale-95 transition relative"
+              className="bg-white px-4 md:px-6 py-2 md:py-3 rounded-full font-black text-sm flex items-center gap-2 shadow-lg hover:-translate-y-1 active:scale-95 transition relative"
             >
-              <FiPlus strokeWidth={3} /> Quick Add
+              <FiPlus strokeWidth={3} /> <span className="hidden md:inline">Quick Add</span>
             </button>
           </div>
         </header>
 
         {/* Welcome Section */}
-        <div className="my-16">
-          <h2 className="text-4xl font-black">Welcome, {userName}</h2>
-          <p className="opacity-60 font-medium italic">{new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</p>
+        <div className="my-16 md:my-16 mt-32 md:mt-16">
+          <h2 className="text-3xl md:text-4xl font-black">Welcome, {userName}</h2>
+          <p className="opacity-60 font-medium italic text-sm md:text-base">{new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</p>
         </div>
 
         {/* Stats Grid */}

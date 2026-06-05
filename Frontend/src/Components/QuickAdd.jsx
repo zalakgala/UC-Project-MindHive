@@ -97,7 +97,7 @@ const QuickAdd = ({ setShowQuickAdd, onSuccess, folders, initialFile = null }) =
 
   return (
     <div className="fixed inset-0 bg-[#3B2A1F]/40 backdrop-blur-md z-[1000] flex items-center justify-center p-4">
-      <div className="relative bg-[#FFE455]/90 backdrop-blur-2xl border-4 border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[3rem] p-10 w-full max-w-md flex flex-col gap-5 text-[#3B2A1F]">
+      <div className="relative bg-[#FFE455]/90 backdrop-blur-2xl border-4 border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 w-full max-w-md flex flex-col gap-5 text-[#3B2A1F]">
         <button
           onClick={() => setShowQuickAdd(false)}
           className="absolute top-6 right-8 w-10 h-10 flex items-center justify-center bg-white/40 hover:bg-white/80 rounded-full transition-all group"

@@ -9,10 +9,11 @@ import {
   FiSettings,
   FiArchive,
   FiTarget,
+  FiX,
 } from "react-icons/fi";
 import logo from "../assets/Logo.png";
 
-const Navbar = () => {
+const Navbar = ({ isOpen, setIsOpen }) => {
   const location = useLocation();
   const [userData, setUserData] = useState({ name: "Loading...", initials: "...", profileImage: null });
   const [isFocusMode, setIsFocusMode] = useState(false);
@@ -35,11 +36,11 @@ const Navbar = () => {
 
   const isActive = (path) => location.pathname === path;
 
-  // Internal Helper Component for Nav Items
   const NavItem = ({ to, icon, label, active }) => (
     <Link
       to={to}
-      className={`flex items-center gap-8 px-6 py-3 rounded-xl transition-all duration-200 hover:scale-110 ${
+      onClick={() => { if (setIsOpen) setIsOpen(false); }}
+      className={`flex items-center gap-8 px-6 py-3 rounded-xl transition-all duration-200 hover:scale-105 ${
         active
           ? "bg-[#FFE455] hover:bg-[#ffd814] text-[#3B2A1F] font-medium shadow-sm"
           : "text-[#3B2A1F]/70 hover:bg-[#3B2A1F]/10 font-medium"
@@ -51,17 +52,40 @@ const Navbar = () => {
   );
 
   return (
-    <aside className="w-64 h-screen flex flex-col py-4 px-4 justify-between bg-[#F7EACD] fixed left-0 top-0 border-r border-[#3B2A1F]/5">
-      <div>
-        {/* Logo Section */}
-        <div className="flex flex-col items-center mb-12">
-          <div className="w-20 h-20 flex items-center justify-center">
-            <img src={logo}></img>
+    <>
+      {/* Mobile Backdrop */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 md:hidden" 
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+      
+      <aside 
+        className={`w-64 h-screen flex flex-col py-4 px-4 justify-between bg-[#F7EACD] fixed left-0 top-0 border-r border-[#3B2A1F]/5 z-50 transition-transform duration-300 ease-in-out md:translate-x-0 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div>
+          {/* Close button for mobile */}
+          <div className="md:hidden flex justify-end mb-2">
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="p-2 text-[#3B2A1F] hover:bg-[#3B2A1F]/10 rounded-lg"
+            >
+              <FiX size={24} />
+            </button>
           </div>
-          <h1 className="font-black tracking-widest text-xl text-[#3B2A1F]">
-            MINDHIVE
-          </h1>
-        </div>
+
+          {/* Logo Section */}
+          <div className="flex flex-col items-center mb-12 hidden md:flex">
+            <div className="w-20 h-20 flex items-center justify-center">
+              <img src={logo} alt="Logo" />
+            </div>
+            <h1 className="font-black tracking-widest text-xl text-[#3B2A1F]">
+              MINDHIVE
+            </h1>
+          </div>
 
         {/* Navigation Links */}
         <nav className="space-y-4">
@@ -128,7 +152,8 @@ const Navbar = () => {
           <FiSettings className="text-[#3B2A1F] text-2xl cursor-pointer hover:rotate-90 transition-transform duration-300" />
         </div>
       </Link>
-    </aside>
+      </aside>
+    </>
   );
 };
 

@@ -330,27 +330,27 @@ const ResourcesPage = () => {
 
   return (
     <div
-      className="ml-64 min-h-screen bg-[#F7EACD] p-6 font-inter text-[#3B2A1F]"
+      className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-6 font-inter text-[#3B2A1F]"
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
-      <div className="w-full bg-[#FFE455] rounded-[3rem] p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)] shadow-sm">
-        <header className="py-2 px-4 bg-[#ffda20]/70 fixed top-12 z-20 flex items-center justify-between mb-10 w-[70.5rem] rounded-full">
+      <div className="w-full bg-[#FFE455] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)] mt-16 md:mt-0 shadow-sm">
+        <header className="py-2 px-4 bg-[#ffda20]/70 fixed top-20 md:top-12 z-20 flex items-center justify-between mb-10 w-[calc(100%-3rem)] md:w-[calc(100%-21rem)] lg:w-[calc(100%-24rem)] max-w-6xl rounded-full">
           <div className="relative">
             <FiSearch className="relative top-6 left-4 z-20 opacity-40" />
             <input
               type="text"
               placeholder="Search tags, resources or notes..."
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-white rounded-full py-3 px-12 outline-none shadow-inner text-sm placeholder:text-[#3B2A1F]/70 border border-transparent focus:border-[#3B2A1F]/10 transition relative bottom-2 w-2xl"
+              className="bg-white rounded-full py-3 px-10 md:px-12 outline-none shadow-inner text-sm placeholder:text-[#3B2A1F]/70 border border-transparent focus:border-[#3B2A1F]/10 transition relative bottom-2 w-full md:w-96 lg:w-2xl"
             />
           </div>
           {!isArchivePage && (
             <button
               onClick={() => setShowQuickAdd(true)}
-              className="bg-white px-6 py-3 rounded-full font-black text-sm flex items-center gap-2 shadow-lg hover:-translate-y-1 active:scale-95 transition relative"
+              className="bg-white px-4 md:px-6 py-2 md:py-3 rounded-full font-black text-sm flex items-center gap-2 shadow-lg hover:-translate-y-1 active:scale-95 transition relative"
             >
-              <FiPlus strokeWidth={3} /> Quick Add
+              <FiPlus strokeWidth={3} /> <span className="hidden md:inline">Quick Add</span>
             </button>
           )}
         </header>
@@ -374,11 +374,11 @@ const ResourcesPage = () => {
         )}
 
         <div className={`flex items-center justify-between ${currentFolderId ? 'mt-4' : 'mt-24'} mb-10`}>
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row gap-4 mb-4 md:mb-0">
             <div className="relative">
               <button
                 onClick={() => { setIsDropdownOpen(!isDropdownOpen); setIsTagDropdownOpen(false); }}
-                className="flex items-center gap-8 bg-white/90 px-5 py-2 rounded-2xl font-black text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
+                className="flex items-center justify-between w-full md:w-auto gap-4 md:gap-8 bg-white/90 px-5 py-2 rounded-2xl font-black text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
               >
                 Type: {selectedType}
                 <FiChevronDown
@@ -407,7 +407,7 @@ const ResourcesPage = () => {
             <div className="relative">
               <button
                 onClick={() => { setIsTagDropdownOpen(!isTagDropdownOpen); setIsDropdownOpen(false); }}
-                className="flex items-center gap-8 bg-white/90 px-5 py-2 rounded-2xl font-black text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
+                className="flex items-center justify-between w-full md:w-auto gap-4 md:gap-8 bg-white/90 px-5 py-2 rounded-2xl font-black text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
                 Tag: {selectedTag} <FiChevronDown className={`transition-transform ${isTagDropdownOpen ? "rotate-180" : ""}`} />
               </button>
 
@@ -433,11 +433,11 @@ const ResourcesPage = () => {
           </div>
 
           {!isArchivePage && (
-            <div className="relative left-72">
+            <div className="relative md:left-24 lg:left-72">
               <button
                 onClick={() => setShowNewFolder(true)}
                 className="flex items-center gap-4 bg-white/90 px-4 py-2 rounded-2xl font-bold text-sm border-2 border-[#3B2A1F]/5 shadow-[4px_4px_0px_0px_rgba(59,42,31,0.1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all">
-                <FiFolderPlus strokeWidth={3} /> New Folder
+                <FiFolderPlus strokeWidth={3} /> <span className="hidden md:inline">New Folder</span>
               </button>
             </div>
           )}
