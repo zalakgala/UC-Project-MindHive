@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@keyframes spin3D {
+  0%, 60% { transform: rotateY(0deg) rotateX(0deg); }
+  85%, 100% { transform: rotateY(360deg) rotateX(0deg); }
+}
