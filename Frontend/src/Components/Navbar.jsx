@@ -23,7 +23,7 @@ const Navbar = () => {
         const res = await api.get('/api/profile/');
         const name = res.data.full_name || res.data.username || "User";
         const initials = name.split(" ").map((n) => n[0]).join("").substring(0, 2).toUpperCase();
-        const profileImage = res.data.profile_image ? (res.data.profile_image.startsWith('http') ? res.data.profile_image : `http://127.0.0.1:8000${res.data.profile_image}`) : null;
+        const profileImage = res.data.profile_image ? (res.data.profile_image.startsWith('http') ? res.data.profile_image : `${api.defaults.baseURL}${res.data.profile_image}`) : null;
         setUserData({ name, initials, profileImage });
         setIsFocusMode(res.data.is_focus_mode || false);
       } catch (err) {

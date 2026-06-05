@@ -39,7 +39,7 @@ const Profile = () => {
         setIsFocusMode(response.data.is_focus_mode || false);
         setDeleteDays(response.data.auto_empty_days || 30);
         if (response.data.profile_image) {
-          setProfileImagePreview(response.data.profile_image.startsWith('http') ? response.data.profile_image : `http://127.0.0.1:8000${response.data.profile_image}`);
+          setProfileImagePreview(response.data.profile_image.startsWith('http') ? response.data.profile_image : `http://${api.defaults.baseURL}$:8000${response.data.profile_image}`);
         }
       } catch (error) {
         console.error("Failed to fetch profile", error);
@@ -67,7 +67,7 @@ const Profile = () => {
 
       const res = await api.patch('/api/profile/', formData);
       if (res.data.profile_image) {
-        setProfileImagePreview(res.data.profile_image.startsWith('http') ? res.data.profile_image : `http://127.0.0.1:8000${res.data.profile_image}`);
+        setProfileImagePreview(res.data.profile_image.startsWith('http') ? res.data.profile_image : `http://${api.defaults.baseURL}$:8000${res.data.profile_image}`);
         setProfileImage(null);
       }
       alert("Profile updated successfully!");

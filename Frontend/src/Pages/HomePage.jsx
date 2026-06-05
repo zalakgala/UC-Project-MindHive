@@ -232,7 +232,7 @@ const ContentSection = ({ title, icon, items = [], emptyText = "No items" }) => 
 
                   let fileUrl = "";
                   if (item.file) {
-                    fileUrl = item.file.startsWith("http") ? item.file : `http://127.0.0.1:8000${item.file}`;
+                    fileUrl = item.file.startsWith("http") ? item.file : `http://${api.defaults.baseURL}$:8000${item.file}`;
                   } else if (item.url) {
                     fileUrl = item.url;
                   }

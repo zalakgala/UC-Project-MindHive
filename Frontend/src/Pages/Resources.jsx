@@ -222,7 +222,7 @@ const ResourcesPage = () => {
     } else {
       let fileUrl = "";
       if (item.file) {
-        fileUrl = item.file.startsWith("http") ? item.file : `http://127.0.0.1:8000${item.file}`;
+        fileUrl = item.file.startsWith("http") ? item.file : `http://${api.defaults.baseURL}$:8000${item.file}`;
       } else if (item.url) {
         fileUrl = item.url;
       }
@@ -252,7 +252,7 @@ const ResourcesPage = () => {
         console.error("Download failed:", err);
         alert("Download failed. Falling back to direct URL.");
         // Fallback
-        const fileUrl = item.file.startsWith("http") ? item.file : `http://127.0.0.1:8000${item.file}`;
+        const fileUrl = item.file.startsWith("http") ? item.file : `http://${api.defaults.baseURL}$:8000${item.file}`;
         const link = document.createElement('a');
         link.href = fileUrl;
         link.download = item.name || "download";
@@ -620,7 +620,7 @@ const ResourcesPage = () => {
 export default ResourcesPage;
 
 const PreviewModal = ({ item, onClose }) => {
-  const fileUrl = item.file ? (item.file.startsWith("http") ? item.file : `http://127.0.0.1:8000${item.file}`) : item.url;
+  const fileUrl = item.file ? (item.file.startsWith("http") ? item.file : `http://${api.defaults.baseURL}$:8000${item.file}`) : item.url;
 
   return (
     <div className="fixed inset-0 bg-[#3B2A1F]/80 backdrop-blur-md z-[1000] flex items-center justify-center p-10" onClick={onClose}>

@@ -141,7 +141,7 @@ const Viewer = () => {
   useEffect(() => {
     if (!url) return;
 
-    const isLocal = url.includes("127.0.0.1") || url.includes("localhost") || url.startsWith("/");
+    const isLocal = url.includes("${api.defaults.baseURL}$") || url.includes("localhost") || url.startsWith("/");
     const isDoc = type !== "image" && type !== "video";
 
     if (isLocal && isDoc) {
