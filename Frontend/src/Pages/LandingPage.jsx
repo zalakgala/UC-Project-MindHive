@@ -238,7 +238,7 @@ const HeroSection = () => {
             MINDHIVE
           </h1>
 
-          <div className="text-5xl md:text-9xl text-[#3B2A1F] mb-6 md:mb-10 flex flex-col items-center gap-2 mel">
+          <div className="text-4xl sm:text-5xl md:text-9xl text-[#3B2A1F] mb-6 md:mb-10 flex flex-col items-center gap-2 mel text-center">
             <span className="inline-block ">Your knowledge</span>
             <span className="inline-block ">organized.</span>
           </div>
@@ -277,7 +277,7 @@ const ClutterSection = () => {
 
         {/* Right Side Text Container */}
         <div className="flex w-full md:w-1/2 flex-col relative px-4 bottom-0 md:bottom-16 items-center z-30">
-          <h2 className="text-5xl md:text-8xl text-[#3B2A1F] font-normal tracking-wide leading-[1.1] mb-6 md:mb-8 text-center mel">
+          <h2 className="text-4xl sm:text-5xl md:text-8xl text-[#3B2A1F] font-normal tracking-wide leading-[1.1] mb-6 md:mb-8 text-center mel">
             Clutter Kills <br /> Focus
           </h2>
           <p className="text-lg md:text-2xl text-[#3B2A1F] font-semibold mb-6 md:mb-8 max-w-content text-center pop leading-relaxed px-4">

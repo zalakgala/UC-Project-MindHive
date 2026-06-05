@@ -8,7 +8,7 @@ function PagesWithNavbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-[#F7EACD]">
+    <div className="flex min-h-screen bg-[#F7EACD] w-full overflow-x-hidden relative">
       {/* Mobile Top Bar */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 bg-[#F7EACD] border-b border-[#3B2A1F]/5 z-40 flex items-center justify-between px-4">
         <div className="flex items-center gap-2">
