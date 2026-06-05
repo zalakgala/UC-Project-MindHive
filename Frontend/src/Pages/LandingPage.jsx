@@ -158,10 +158,10 @@ const NavSection = () => {
   return (
     <>
       {/* Navigation Bar */}
-      <nav className="bg-[#FFE455] flex justify-between items-center px-10 z-50 relative w-full border-b border-yellow-400">
-        <img src={Logo} alt="Mindhive Logo" className="object-contain w-20" />
+      <nav className="bg-[#FFE455] flex justify-between items-center px-4 md:px-10 py-3 md:py-0 z-50 relative w-full border-b border-yellow-400">
+        <img src={Logo} alt="Mindhive Logo" className="object-contain w-12 md:w-20" />
 
-        <ul className="hidden lg:flex list-none gap-16 text-xl font-medium text-gray-700">
+        <ul className="hidden md:flex list-none gap-16 text-xl font-medium text-gray-700">
           <li
             onClick={() => scrollToSection("home")}
             className="cursor-pointer hover:text-black hover:scale-150 transition-all"
@@ -182,14 +182,14 @@ const NavSection = () => {
           </li>
         </ul>
 
-        <div className="flex gap-4">
+        <div className="flex gap-2 md:gap-4">
           <Link to={"/signup"}>
-            <button className="px-6 py-2 bg-[#F7EACD] rounded-full border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:bg-yellow-50 hover:shadow-none transition-all cursor-pointer">
+            <button className="px-3 md:px-6 py-1.5 md:py-2 text-sm md:text-base bg-[#F7EACD] rounded-full border-2 border-black font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:bg-yellow-50 hover:shadow-none transition-all cursor-pointer">
               Sign Up
             </button>
           </Link>
           <Link to={"/login"}>
-            <button className="px-6 py-2 bg-[#F7EACD] rounded-full border-2 border-black font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:bg-yellow-50 hover:shadow-none transition-all cursor-pointer">
+            <button className="px-3 md:px-6 py-1.5 md:py-2 text-sm md:text-base bg-[#F7EACD] rounded-full border-2 border-black font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:bg-yellow-50 hover:shadow-none transition-all cursor-pointer">
               Login
             </button>
           </Link>

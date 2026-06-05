@@ -91,23 +91,23 @@ const HomePage = () => {
 
   return (
     <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-6 font-inter text-[#3B2A1F]">
-      <div className="w-full h-full p-4 md:p-10 mt-16 md:mt-0 relative">
+      <div className="w-full h-full bg-[#FFE455] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)]">
         {/* Top Header Bar */}
-        <header className="py-2 z-20 flex items-center justify-between gap-4 mb-6 w-full max-w-6xl">
+        <header className="py-2 px-3 md:px-4 bg-[#ffda20]/70 fixed top-20 md:top-12 z-20 flex items-center justify-between mb-10 w-[calc(100%-3rem)] md:w-[calc(100%-21rem)] lg:w-[calc(100%-24rem)] max-w-6xl rounded-full gap-2">
           <div className="relative flex-1">
-            <FiSearch className="absolute top-3.5 left-4 z-20 opacity-40" />
+            <FiSearch className="absolute top-1/2 -translate-y-1/2 left-4 z-20 opacity-40" />
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search tags, resources or notes..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-white rounded-full py-3 pl-12 pr-4 outline-none shadow-sm text-sm border border-transparent focus:border-[#3B2A1F]/10 transition w-full"
+              className="bg-white rounded-full py-2.5 md:py-3 px-10 md:px-12 outline-none shadow-inner text-xs md:text-sm placeholder:text-[#3B2A1F]/70 border border-transparent focus:border-[#3B2A1F]/10 transition w-full md:w-96 lg:w-2xl"
             />
           </div>
           <div className="flex items-center">
             <button 
               onClick={() => setShowQuickAdd(true)}
-              className="bg-[#FFE455] px-4 md:px-6 py-3 rounded-full font-black text-sm flex items-center gap-2 shadow-sm border-2 border-white hover:-translate-y-1 active:scale-95 transition"
+              className="bg-white px-3 md:px-6 py-2.5 md:py-3 rounded-full font-black text-sm flex items-center gap-2 shadow-lg hover:-translate-y-1 active:scale-95 transition"
             >
               <FiPlus strokeWidth={3} /> <span className="hidden md:inline">Quick Add</span>
             </button>
@@ -115,7 +115,7 @@ const HomePage = () => {
         </header>
 
         {/* Welcome Section */}
-        <div className="mb-10">
+        <div className="my-16 md:my-16 mt-32 md:mt-16">
           <h2 className="text-3xl md:text-4xl font-black">Welcome, {userName}</h2>
           <p className="opacity-60 font-medium italic text-sm md:text-base">{new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</p>
         </div>

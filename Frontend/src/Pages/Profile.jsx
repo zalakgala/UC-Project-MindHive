@@ -91,8 +91,8 @@ const Profile = () => {
   };
 
   return (
-    <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-10 font-inter text-[#3B2A1F] flex justify-center">
-      <div className="w-full max-w-4xl p-6 md:p-10 relative mt-16 md:mt-0">
+    <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-6 font-inter text-[#3B2A1F] flex justify-center">
+      <div className="w-full max-w-4xl bg-[#F7EACD] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 min-h-[calc(100vh-3rem)] mt-16 md:mt-0 shadow-sm relative">
         <header className="mb-10 flex justify-center text-center">
           <div>
             <h2 className="text-4xl font-black mb-2">Account Settings</h2>
@@ -147,7 +147,7 @@ const Profile = () => {
                 type="text"
                 value={user.name}
                 onChange={(e) => setUser({ ...user, name: e.target.value })}
-                className="p-3 bg-white border-2 border-black rounded-xl outline-none shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
+                className="p-3 bg-white/60 border-2 border-black rounded-xl outline-none shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -156,25 +156,25 @@ const Profile = () => {
                 type="text"
                 value={user.username}
                 onChange={(e) => setUser({ ...user, username: e.target.value })}
-                className="p-3 bg-white border-2 border-black rounded-xl outline-none shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
+                className="p-3 bg-white/60 border-2 border-black rounded-xl outline-none shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 col-span-2">
               <label className="font-bold ml-1">Email</label>
               <input
                 type="email"
                 value={user.email}
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
-                className="p-3 bg-white border-2 border-black rounded-xl outline-none shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
+                className="p-3 bg-white/60 border-2 border-black rounded-xl outline-none shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 col-span-2">
               <label className="font-bold ml-1 text-[#3B2A1F]">Bio</label>
               <textarea
                 rows="3"
                 value={user.bio}
                 onChange={(e) => setUser({ ...user, bio: e.target.value })}
-                className="p-3 bg-white border-2 border-black rounded-xl focus:bg-white outline-none transition-all resize-none shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
+                className="p-3 bg-white/60 border-2 border-black rounded-xl focus:bg-white outline-none transition-all resize-none shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
               ></textarea>
             </div>
           </div>

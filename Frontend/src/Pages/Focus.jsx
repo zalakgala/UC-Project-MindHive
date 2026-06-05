@@ -117,8 +117,8 @@ const Focus = () => {
     };
 
     return (
-        <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-10 font-inter text-[#3B2A1F]">
-            <div className="w-full p-6 md:p-10 mt-16 md:mt-0 relative">
+        <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-6 font-inter text-[#3B2A1F]">
+            <div className="w-full bg-[#FFE455] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)] mt-16 md:mt-0 shadow-sm">
                 <header className="mb-10">
                     <h2 className="text-4xl font-black mb-2 text-[#3B2A1F]">Focus Mode</h2>
                     <p className="text-[#3B2A1F]/70 font-medium">Eliminate distractions and track your study sessions.</p>
@@ -212,8 +212,8 @@ const Focus = () => {
 
                         <hr className="border-black/10 my-4" />
 
-                        <div className="flex flex-col sm:flex-row items-start sm:items-end gap-4">
-                            <div className="flex-1 w-full">
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-end gap-3 sm:gap-2">
+                            <div className="flex-1">
                                 <label className="text-xs font-bold mb-1 block">MANUAL LOG (MINUTES)</label>
                                 <input
                                     type="number"
@@ -223,7 +223,7 @@ const Focus = () => {
                                     className="w-full p-3 border-2 border-black rounded-xl bg-white outline-none"
                                 />
                             </div>
-                            <button onClick={handleManualLog} className="w-full sm:w-auto px-6 py-3 bg-[#3B2A1F] text-white rounded-xl font-black hover:-translate-y-1 transition-transform shadow-lg">
+                            <button onClick={handleManualLog} className="px-4 sm:px-6 py-3 bg-[#3B2A1F] text-white rounded-xl font-black hover:-translate-y-1 transition-transform shadow-lg text-sm sm:text-base">
                                 Log Time
                             </button>
                         </div>
