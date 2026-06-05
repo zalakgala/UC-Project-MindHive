@@ -355,10 +355,14 @@ def download_resource(request, pk):
     file_name = resource.file.name.split("/")[-1]
 
     # Local file fallback (when running locally with DEBUG=True)
-    if hasattr(resource.file, 'path') and os.path.exists(resource.file.path):
-        response = FileResponse(open(resource.file.path, "rb"), as_attachment=True)
-        response["Content-Disposition"] = f'attachment; filename="{file_name}"'
-        return response
+    try:
+        local_path = resource.file.path
+        if os.path.exists(local_path):
+            response = FileResponse(open(local_path, "rb"), as_attachment=True)
+            response["Content-Disposition"] = f'attachment; filename="{file_name}"'
+            return response
+    except NotImplementedError:
+        pass # Remote storage (e.g., Cloudinary) does not support absolute paths
 
     # Remote file fetching (for Cloudinary/S3 in production)
     try:
