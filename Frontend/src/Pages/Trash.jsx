@@ -166,16 +166,16 @@ const Trash = () => {
 
   return (
     <div className="ml-0 md:ml-64 min-h-screen bg-[#F7EACD] p-4 md:p-6 font-inter text-[#3B2A1F]">
-      <div className="w-full bg-[#FFE455] rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 border-4 border-white/20 min-h-[calc(100vh-3rem)] mt-16 md:mt-0 shadow-sm">
+      <div className="w-full p-4 md:p-10 mt-16 md:mt-0 relative">
         {/* Header Bar */}
-        <header className="mb-10 flex items-center justify-between">
-          <div className="relative w-full">
+        <header className="mb-6 flex items-center justify-between">
+          <div className="relative w-full max-w-6xl">
             <FiSearch className="absolute top-3.5 left-4 z-20 opacity-40" />
             <input
               type="text"
               placeholder="Search tags, resources or notes..."
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-white rounded-full py-3 pl-12 pr-4 outline-none shadow-inner text-sm placeholder:text-[#3B2A1F]/70 border border-transparent focus:border-[#3B2A1F]/10 transition relative w-full md:w-96 lg:w-2xl"
+              className="bg-white rounded-full py-3 pl-12 pr-4 outline-none shadow-sm text-sm border border-transparent focus:border-[#3B2A1F]/10 transition w-full"
             />
           </div>
         </header>
@@ -260,9 +260,9 @@ const Trash = () => {
         {viewMode === "list" ? (
           <div className="w-full">
             <div className="grid grid-cols-12 px-6 mb-4 text-[#3B2A1F]/50 font-black uppercase text-xs tracking-widest">
-              <div className="col-span-7">Name</div>
-              <div className="col-span-2">Date Binned</div>
-              <div className="col-span-2 text-right">Type</div>
+              <div className="col-span-11 md:col-span-7">Name</div>
+              <div className="hidden md:block col-span-2">Date Binned</div>
+              <div className="hidden md:block col-span-2 text-right">Type</div>
               <div className="col-span-1"></div>
             </div>
 
@@ -272,13 +272,13 @@ const Trash = () => {
                   key={item.id}
                   className="grid grid-cols-12 items-center px-6 py-2 bg-white/40 hover:bg-white/90 rounded-2xl transition-all group border border-transparent hover:border-white/50 hover:shadow-md"
                 >
-                  <div className="col-span-7 flex items-center gap-4 font-bold text-lg">
+                  <div className="col-span-11 md:col-span-7 flex items-center gap-4 font-bold text-lg">
                     <span className="opacity-70 group-hover:scale-125 group-hover:rotate-6 transition-all duration-300">
                       {item.icon}
                     </span>
                     <span className="truncate">{item.name}</span>
                     {item.tags && item.tags.length > 0 && (
-                      <div className="flex gap-1.5 flex-wrap">
+                      <div className="hidden md:flex gap-1.5 flex-wrap">
                         {item.tags.map((tag, idx) => (
                           <span key={idx} className="text-[10px] bg-[#3B2A1F]/10 text-[#3B2A1F] px-2 py-0.5 rounded-full font-black uppercase tracking-wider whitespace-nowrap">
                             #{tag}
@@ -287,10 +287,10 @@ const Trash = () => {
                       </div>
                     )}
                   </div>
-                  <div className="col-span-2 font-medium opacity-50 italic text-sm">
+                  <div className="hidden md:block col-span-2 font-medium opacity-50 italic text-sm">
                     {item.date}
                   </div>
-                  <div className="col-span-2 text-right font-black text-xs opacity-70">
+                  <div className="hidden md:block col-span-2 text-right font-black text-xs opacity-70">
                     <span className="bg-[#3B2A1F]/5 px-3 py-1 rounded-full">
                       {item.type}
                     </span>
@@ -336,7 +336,7 @@ const Trash = () => {
                     {item.name}
                   </h3>
                   {item.tags && item.tags.length > 0 && (
-                    <div className="flex gap-1 flex-wrap mt-1">
+                    <div className="hidden md:flex gap-1 flex-wrap mt-1">
                       {item.tags.slice(0, 3).map((tag, idx) => (
                         <span key={idx} className="text-[8px] bg-[#3B2A1F]/10 text-[#3B2A1F] px-1.5 py-0.5 rounded-full font-black uppercase tracking-wider whitespace-nowrap">
                           #{tag}
@@ -344,7 +344,7 @@ const Trash = () => {
                       ))}
                     </div>
                   )}
-                  <p className="text-[10px] font-bold opacity-40 italic mt-1">
+                  <p className="hidden md:block text-[10px] font-bold opacity-40 italic mt-1">
                     {item.date}
                   </p>
                 </div>
@@ -370,7 +370,7 @@ const Trash = () => {
                   )}
                 </div>
 
-                <div className="absolute bottom-2 right-3 bg-white/80 backdrop-blur-md px-2 py-0.5 rounded-lg text-[9px] font-black uppercase tracking-tighter shadow-sm pointer-events-none">
+                <div className="hidden md:block absolute bottom-2 right-3 bg-white/80 backdrop-blur-md px-2 py-0.5 rounded-lg text-[9px] font-black uppercase tracking-tighter shadow-sm pointer-events-none">
                   {item.type}
                 </div>
               </div>

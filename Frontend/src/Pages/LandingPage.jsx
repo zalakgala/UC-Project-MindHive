@@ -161,7 +161,7 @@ const NavSection = () => {
       <nav className="bg-[#FFE455] flex justify-between items-center px-10 z-50 relative w-full border-b border-yellow-400">
         <img src={Logo} alt="Mindhive Logo" className="object-contain w-20" />
 
-        <ul className="flex list-none gap-16 text-xl font-medium text-gray-700">
+        <ul className="hidden lg:flex list-none gap-16 text-xl font-medium text-gray-700">
           <li
             onClick={() => scrollToSection("home")}
             className="cursor-pointer hover:text-black hover:scale-150 transition-all"
