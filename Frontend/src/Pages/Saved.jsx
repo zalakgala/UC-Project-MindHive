@@ -132,7 +132,7 @@ const Saved = () => {
 
     let fileUrl = "";
     if (item.file) {
-      fileUrl = item.file.startsWith("http") ? item.file : `http://${api.defaults.baseURL}$:8000${item.file}`;
+      fileUrl = item.file.startsWith("http") ? item.file : `${api.defaults.baseURL}${item.file}`;
     } else if (item.url) {
       fileUrl = item.url;
     }
@@ -147,7 +147,7 @@ const Saved = () => {
 
   const downloadResource = (item) => {
     if (item.file) {
-      const fileUrl = item.file.startsWith("http") ? item.file : `http://${api.defaults.baseURL}$:8000${item.file}`;
+      const fileUrl = item.file.startsWith("http") ? item.file : `${api.defaults.baseURL}${item.file}`;
       const link = document.createElement('a');
       link.href = fileUrl;
       link.download = item.name || "download";

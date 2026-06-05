@@ -13,7 +13,7 @@ const ResourceThumbnail = ({ item, className = "" }) => {
 
   let fileUrl = "";
   if (item.file) {
-    fileUrl = item.file.startsWith("http") ? item.file : `http://${api.defaults.baseURL}$:8000${item.file}`;
+    fileUrl = item.file.startsWith("http") ? item.file : `${api.defaults.baseURL}${item.file}`;
   } else if (item.url) {
     fileUrl = item.url;
   }
