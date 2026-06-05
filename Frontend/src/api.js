@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000',
+  baseURL: 'https://uc-project-mindhive.onrender.com',
   // withCredentials: true // Uncomment if you want to also send session cookies
 });
 
